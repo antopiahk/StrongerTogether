@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Player2Controller : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float timeToFullyChargeJump = 1;
@@ -22,12 +22,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Jumping
-        if (Input.GetKey(KeyCode.W) && isGrounded)
+        if (Input.GetKey(KeyCode.UpArrow) && isGrounded)
         {
             timeElapsed += Time.deltaTime;
             chargePercent = Mathf.Clamp(timeElapsed / timeToFullyChargeJump, 0, 1);
         }
-        if (Input.GetKeyUp(KeyCode.W) && isGrounded)
+        if (Input.GetKeyUp(KeyCode.UpArrow) && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce * chargePercent, ForceMode2D.Impulse);
             timeElapsed = 0;
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Steering
-        horizontal = Input.GetAxis("Horizontal");
+        horizontal = Input.GetAxis("Horizontal2");
         float horizontalVelocity = rb.velocity.x;
         rb.velocity = new Vector2(Mathf.Clamp(horizontalVelocity, -maxHorizontalSpeed, maxHorizontalSpeed), rb.velocity.y);
     }

@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationController : MonoBehaviour
+public class Animation2Controller : MonoBehaviour
 {
     public GameObject surprisedEmote;
     public float emoteDuration;
-    PlayerController playerScript;
+    Player2Controller playerScript;
     Animator playerAnim;
     bool emoting;
 
     void Start()
     {
-        playerScript = GetComponent<PlayerController>();
+        playerScript = GetComponent<Player2Controller>();
         playerAnim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.W) && playerScript.isGrounded && playerScript.chargePercent > 0.1f)
+        if (Input.GetKeyUp(KeyCode.UpArrow) && playerScript.isGrounded && playerScript.chargePercent > 0.1f)
         {
             playerAnim.SetBool("Jumping", true);
         }
@@ -29,7 +29,7 @@ public class AnimationController : MonoBehaviour
 
         playerAnim.SetBool("isGrounded", playerScript.isGrounded);
 
-        if (Input.GetKeyDown(KeyCode.S) && playerScript.isGrounded && !emoting)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && playerScript.isGrounded && !emoting)
         {
             playerAnim.SetTrigger("Surprised");
             StartCoroutine(Emote(surprisedEmote));
@@ -39,7 +39,7 @@ public class AnimationController : MonoBehaviour
 
     public IEnumerator Emote(GameObject emote)
     {
-        GameObject thisEmote = Instantiate(emote, playerScript.rb.position + new Vector2(0.5f, 0.8125f), transform.rotation);
+        GameObject thisEmote = Instantiate(emote, playerScript.rb.position + new Vector2(-0.5f, 0.8125f), transform.rotation);
         yield return new WaitForSeconds(emoteDuration);
         Destroy(thisEmote);
         emoting = false;
