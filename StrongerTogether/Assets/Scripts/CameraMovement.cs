@@ -8,6 +8,7 @@ public class CameraMovement : MonoBehaviour
 
     public float interpVelocity;
     public float followDistance;
+    public float speed;
     public GameObject target;
     public Vector3 offset;
     Vector3 targetPos;
@@ -26,7 +27,7 @@ public class CameraMovement : MonoBehaviour
 
             Vector3 targetDirection = Vector2.up; // Make sure the camera stays infront of the object;
 
-            interpVelocity = targetDirection.magnitude * 3f; // Speeeed
+            interpVelocity = targetDirection.magnitude * speed; // Speeeed
 
             targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime); // Math stuff
 
