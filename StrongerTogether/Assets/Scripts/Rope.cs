@@ -9,7 +9,7 @@ public class Rope : MonoBehaviour
     GameObject player2Backhand;
     GameObject player2Fronthand;
     LineRenderer lR;
-    MeshCollider meshCollider;
+    EdgeCollider2D edgeCollider;
 
     void Start()
     {
@@ -17,11 +17,9 @@ public class Rope : MonoBehaviour
         player2Backhand = GameObject.Find("PlayerTwo").transform.Find("Hands").gameObject.transform.Find("Back hand").gameObject;
         player1Fronthand = GameObject.Find("PlayerOne").transform.Find("Hands").gameObject.transform.Find("Hand pivot").gameObject.transform.Find("Hand").gameObject;
         player2Fronthand = GameObject.Find("PlayerTwo").transform.Find("Hands").gameObject.transform.Find("Hand pivot").gameObject.transform.Find("Hand").gameObject;
+        edgeCollider = GetComponent<EdgeCollider2D>();
         lR = GetComponent<LineRenderer>();
         lR.positionCount = 4;
-        Mesh mesh = new Mesh();
-        lR.BakeMesh(mesh, true);
-        meshCollider.sharedMesh = mesh;
     }
 
 
@@ -31,5 +29,8 @@ public class Rope : MonoBehaviour
         lR.SetPosition(1, player1Fronthand.transform.position + new Vector3(0, 0.03125f, 0));
         lR.SetPosition(2, player2Fronthand.transform.position + new Vector3(0, 0.03125f, 0));
         lR.SetPosition(3, player2Backhand.transform.position + new Vector3(0, 0.03125f, 0));
+        Debug.Log(player1Fronthand.transform.position);
+        Vector2[] points = { player1Fronthand.transform.position, player2Fronthand.transform.position };
+        edgeCollider.points = points;
     }
 }
