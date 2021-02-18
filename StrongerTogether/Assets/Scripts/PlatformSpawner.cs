@@ -24,7 +24,7 @@ public class PlatformSpawner : MonoBehaviour
         {
             float randomXPos = Random.Range(leftSpawnPos, rightSpawnPos);
             Instantiate(platformPrefabs[Random.Range(0,platformPrefabs.Length)], new Vector2(randomXPos, yPos), Quaternion.identity);
-            //Instantiate(platformPrefabs[Random.Range(0,platformPrefabs.Length)], new Vector2(Random.Range(leftSpawnPos, rightSpawnPos), yPos), Quaternion.identity);
+            Instantiate(platformPrefabs[Random.Range(0,platformPrefabs.Length)], new Vector2(Random.Range(-leftSpawnPos,-rightSpawnPos), yPos), Quaternion.identity);
             yPos += heightGap;
             yield return new WaitForSeconds(spawnTime);
         }

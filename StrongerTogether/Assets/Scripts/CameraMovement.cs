@@ -20,7 +20,8 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Time.time >= 5) // Check if target (Player) is alive
+
+        if (Time.timeSinceLevelLoad > 3) // Check if target (Player) is alive
         {
             Vector3 posZ = transform.position; // Z offset
             posZ.z = target.transform.position.z;

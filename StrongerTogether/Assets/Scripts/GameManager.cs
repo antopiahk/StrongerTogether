@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerOne, playerTwo;
     public GameObject gameOverGUI;
+
+    private GameObject winner;
     void Awake()
     {
         if(instance == null)
@@ -23,16 +25,17 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(GameObject loser)
     {
-        Debug.Log("WINNER");
+        if(loser = playerOne) winner = playerTwo;
+        else if (loser = playerTwo) winner = playerOne;
         gameOverGUI.SetActive(true);
-        gameOverGUI.transform.Find("GameOverText").GetComponent<TextMeshProUGUI>().text = "Player " + loser.name[6]+loser.name[7]+loser.name[8] + " Wins!";
+        gameOverGUI.transform.Find("GameOverText").GetComponent<TextMeshProUGUI>().text = "Player " + winner.name[6]+winner.name[7]+winner.name[8] + " Wins!";
         StopAllCoroutines();
     }
 
 
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Quit()
