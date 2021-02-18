@@ -5,16 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Bat
-  - Rope
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bat
   - Water
   - UI
-  - 
+  - Rope
   - 
   - 
   - 
