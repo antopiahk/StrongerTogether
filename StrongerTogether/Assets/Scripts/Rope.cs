@@ -9,6 +9,7 @@ public class Rope : MonoBehaviour
     GameObject player2Backhand;
     GameObject player2Fronthand;
     LineRenderer lR;
+    MeshCollider meshCollider;
 
     void Start()
     {
@@ -18,6 +19,9 @@ public class Rope : MonoBehaviour
         player2Fronthand = GameObject.Find("PlayerTwo").transform.Find("Hands").gameObject.transform.Find("Hand pivot").gameObject.transform.Find("Hand").gameObject;
         lR = GetComponent<LineRenderer>();
         lR.positionCount = 4;
+        Mesh mesh = new Mesh();
+        lR.BakeMesh(mesh, true);
+        meshCollider.sharedMesh = mesh;
     }
 
 
