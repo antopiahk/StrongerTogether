@@ -12,10 +12,10 @@ public class Rope : MonoBehaviour
 
     void Start()
     {
-        player1Backhand = GameObject.Find("Player").transform.Find("Hands").gameObject.transform.Find("Back hand").gameObject;
-        player2Backhand = GameObject.Find("Player 2").transform.Find("Hands").gameObject.transform.Find("Back hand").gameObject;
-        player1Fronthand = GameObject.Find("Player").transform.Find("Hands").gameObject.transform.Find("Hand pivot").gameObject.transform.Find("Hand").gameObject;
-        player2Fronthand = GameObject.Find("Player 2").transform.Find("Hands").gameObject.transform.Find("Hand pivot").gameObject.transform.Find("Hand").gameObject;
+        player1Backhand = GameObject.Find("PlayerOne").transform.Find("Hands").gameObject.transform.Find("Back hand").gameObject;
+        player2Backhand = GameObject.Find("PlayerTwo").transform.Find("Hands").gameObject.transform.Find("Back hand").gameObject;
+        player1Fronthand = GameObject.Find("PlayerOne").transform.Find("Hands").gameObject.transform.Find("Hand pivot").gameObject.transform.Find("Hand").gameObject;
+        player2Fronthand = GameObject.Find("PlayerTwo").transform.Find("Hands").gameObject.transform.Find("Hand pivot").gameObject.transform.Find("Hand").gameObject;
         lR = GetComponent<LineRenderer>();
         lR.positionCount = 4;
     }
