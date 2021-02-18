@@ -11,6 +11,10 @@ public class Player2Controller : MonoBehaviour
     public float horizontalSpeed = 3;
     public float maxHorizontalSpeed = 3;
     public bool isGrounded;
+    public bool pullIsReady;
+    public float pullCharge;
+    public float pullCoolDown = 5;
+    public float pullForce = 2;
     float timeElapsed;
     float horizontal;
 
@@ -32,6 +36,19 @@ public class Player2Controller : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce * chargePercent, ForceMode2D.Impulse);
             timeElapsed = 0;
             chargePercent = 0;
+        }
+
+        //Pulling
+        if (Input.GetKeyDown(KeyCode.Period) && pullIsReady)
+        {
+            pullCharge = 0;
+            pullIsReady = false;
+            GameObject.Find("PlayerOne").GetComponent<Rigidbody2D>().AddForce((transform.position - GameObject.Find("PlayerOne").transform.position).normalized * pullForce, ForceMode2D.Impulse);
+        }
+        pullCharge += Time.deltaTime;
+        if (pullCharge / pullCoolDown >= 1)
+        {
+            pullIsReady = true;
         }
 
         //Steering
