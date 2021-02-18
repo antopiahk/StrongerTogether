@@ -23,9 +23,9 @@ public class Rope : MonoBehaviour
 
     void Update()
     {
-        lR.SetPosition(0, player1Backhand.transform.position);
-        lR.SetPosition(1, player1Fronthand.transform.position);
-        lR.SetPosition(2, player2Fronthand.transform.position);
-        lR.SetPosition(3, player2Backhand.transform.position);
+        lR.SetPosition(0, player1Backhand.transform.position + new Vector3(0, 0.03125f, 0));
+        lR.SetPosition(1, player1Fronthand.transform.position + new Vector3(0, 0.03125f, 0));
+        lR.SetPosition(2, player2Fronthand.transform.position + new Vector3(0, 0.03125f, 0));
+        lR.SetPosition(3, player2Backhand.transform.position + new Vector3(0, 0.03125f, 0));
     }
 }
