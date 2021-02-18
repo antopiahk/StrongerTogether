@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Rope : MonoBehaviour
 {
-    Transform player1Backhand;
-    Transform player1Fronthand;
-    Transform player2Backhand;
-    Transform player2Fronthand;
+    GameObject player1Backhand;
+    GameObject player1Fronthand;
+    GameObject player2Backhand;
+    GameObject player2Fronthand;
     LineRenderer lR;
 
     void Start()
     {
-        player1Backhand = GameObject.Find("Player").transform.Find("Hands").transform.Find("Back hand");
-        player2Backhand = GameObject.Find("Player2").transform.Find("Hands").transform.Find("Back hand");
-        player1Fronthand = GameObject.Find("Player").transform.Find("Hands").transform.Find("Hand pivot").transform.Find("Hand");
-        player2Fronthand = GameObject.Find("Player2").transform.Find("Hands").transform.Find("Hand pivot").transform.Find("Hand");
+        player1Backhand = GameObject.Find("Player").transform.Find("Hands").gameObject.transform.Find("Back hand").gameObject;
+        player2Backhand = GameObject.Find("Player 2").transform.Find("Hands").gameObject.transform.Find("Back hand").gameObject;
+        player1Fronthand = GameObject.Find("Player").transform.Find("Hands").gameObject.transform.Find("Hand pivot").gameObject.transform.Find("Hand").gameObject;
+        player2Fronthand = GameObject.Find("Player 2").transform.Find("Hands").gameObject.transform.Find("Hand pivot").gameObject.transform.Find("Hand").gameObject;
         lR = GetComponent<LineRenderer>();
         lR.positionCount = 4;
     }
@@ -23,9 +23,9 @@ public class Rope : MonoBehaviour
 
     void Update()
     {
-        lR.SetPosition(0, player1Backhand.position);
-        lR.SetPosition(1, player1Fronthand.position);
-        lR.SetPosition(2, player2Fronthand.position);
-        lR.SetPosition(3, player2Backhand.position);
+        lR.SetPosition(0, player1Backhand.transform.position);
+        lR.SetPosition(1, player1Fronthand.transform.position);
+        lR.SetPosition(2, player2Fronthand.transform.position);
+        lR.SetPosition(3, player2Backhand.transform.position);
     }
 }
