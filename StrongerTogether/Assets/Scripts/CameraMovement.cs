@@ -17,7 +17,6 @@ public class CameraMovement : MonoBehaviour
         targetPos = transform.position;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
 

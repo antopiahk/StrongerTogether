@@ -8,8 +8,14 @@ public class Bats : MonoBehaviour
     CircleCollider2D collider;
     public bool isAlive;
     public float timeToRotate;
+    Vector2 destination;
+    Vector2 dir;
     GameObject player;
     Animator batAnim;
+    PlayerController player1Script;
+    Player2Controller player2Script;
+    LineRenderer rope;
+    public int whichBat;
 
     void Start()
     {
@@ -21,20 +27,66 @@ public class Bats : MonoBehaviour
 
     void Update()
     {
-        
+        if (isAlive)
+        {
+            if(player.name == "PlayerOne")
+            {
+                destination = new Vector2(player.transform.position.x - (0.5f * (whichBat)), player.transform.position.y);
+                dir = (destination - (Vector2)transform.position).normalized;
+                if (dir.magnitude > 0.2)
+                {
+                    rb.velocity = dir;
+                }
+                else
+                {
+                    rb.velocity = new Vector2(0, 0);
+                }
+                rope.SetPosition(whichBat, transform.position);
+            }
+            else if (player.name == "PlayerTwo")
+            {
+                destination = new Vector2(player.transform.position.x + (0.5f * (whichBat)), player.transform.position.y);
+                dir = destination - (Vector2)transform.position;
+                if (dir.magnitude > 0.1)
+                {
+                    rb.velocity = dir * 8 / Mathf.Sqrt(whichBat);
+                }
+                else
+                {
+                    rb.velocity = new Vector2(0, 0);
+                }
+                rope.SetPosition(whichBat, transform.position);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            player = collision.gameObject;
+            if (player.name == "PlayerOne")
+            {
+                rope = GameObject.Find("Player1Rope").GetComponent<LineRenderer>();
+                player1Script = player.GetComponent<PlayerController>();
+                player1Script.numOfBats += 1;
+                whichBat = player1Script.numOfBats;
+            }
+            else if (player.name == "PlayerTwo")
+            {
+                rope = GameObject.Find("Player2Rope").GetComponent<LineRenderer>();
+                player2Script = player.GetComponent<Player2Controller>();
+                player2Script.numOfBats += 1;
+                whichBat = player2Script.numOfBats;
+            }
             rb.gravityScale = 0;
             rb.velocity = new Vector2(0, 0);
             Physics2D.IgnoreCollision(collider, collision.gameObject.GetComponent<BoxCollider2D>(), true);
-            player = collision.gameObject;
+            Physics2D.IgnoreLayerCollision(3, 6, true);
+            Physics2D.IgnoreLayerCollision(3, 7, true);
+            Physics2D.IgnoreLayerCollision(3, 3, true);
             isAlive = true;
-            batAnim.SetBool("isAlive", isAlive);
-            StartCoroutine(LerpRotation(rb.rotation));
+            StartCoroutine(LerpRotation(transform.localEulerAngles.z));
         }
     }
 
@@ -43,10 +95,12 @@ public class Bats : MonoBehaviour
         float time = 0;
         while (time < timeToRotate)
         {
-            rb.rotation = Mathf.Lerp(initialRotation, 0, time / timeToRotate);
-            time += Time.deltaTime;
             yield return null;
+            transform.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(initialRotation, 0, time / timeToRotate));
+            time += Time.deltaTime;
         }
-        rb.rotation = 0;
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        batAnim.SetBool("isAlive", isAlive);
     }
 }

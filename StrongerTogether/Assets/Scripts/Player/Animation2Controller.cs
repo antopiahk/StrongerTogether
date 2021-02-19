@@ -8,12 +8,14 @@ public class Animation2Controller : MonoBehaviour
     public float emoteDuration;
     Player2Controller playerScript;
     Animator playerAnim;
+    Animator handsAnim;
     bool emoting;
 
     void Start()
     {
         playerScript = GetComponent<Player2Controller>();
         playerAnim = GetComponent<Animator>();
+        handsAnim = transform.Find("Hands").gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -34,6 +36,11 @@ public class Animation2Controller : MonoBehaviour
             playerAnim.SetTrigger("Surprised");
             StartCoroutine(Emote(surprisedEmote));
             emoting = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Period) && playerScript.pullIsReady)
+        {
+            handsAnim.SetTrigger("Pull");
         }
     }
 

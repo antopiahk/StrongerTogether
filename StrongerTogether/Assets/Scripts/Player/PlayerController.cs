@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float pullCharge;
     public float pullCoolDown = 5;
     public float pullForce = 2;
+    public int numOfBats;
     float timeElapsed;
     float horizontal;
 
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             pullCharge = 0;
             pullIsReady = false;
+            pullForce += 0.2f * numOfBats;
             GameObject.Find("PlayerTwo").GetComponent<Rigidbody2D>().AddForce((transform.position - GameObject.Find("PlayerTwo").transform.position).normalized * pullForce, ForceMode2D.Impulse);
         }
         pullCharge += Time.deltaTime;
