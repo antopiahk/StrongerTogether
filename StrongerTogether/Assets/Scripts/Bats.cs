@@ -60,6 +60,14 @@ public class Bats : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        if(rb.velocity.magnitude > 2)
+        {
+            rb.velocity = rb.velocity.normalized*2;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         gameObject.layer = 3;
