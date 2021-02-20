@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2678883119480306}
   - component: {fileID: 2678883119480305}
   - component: {fileID: 2678883119480308}
+  - component: {fileID: 313550527}
   m_Layer: 8
   m_Name: Bat
   m_TagString: Bat
@@ -86,6 +87,25 @@ MonoBehaviour:
   isAlive: 0
   timeToRotate: 0.5
   whichBat: 0
+--- !u!95 &313550527
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2678883119480304}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36cd23bc9ce68ed4dbaf013f27b388a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2678884337582535
 GameObject:
   m_ObjectHideFlags: 0
