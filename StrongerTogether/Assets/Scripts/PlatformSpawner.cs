@@ -10,11 +10,10 @@ public class PlatformSpawner : MonoBehaviour
     public float leftSpawnPos, rightSpawnPos;
     public float heightGap;
 
-    private float yPos = 0f;
+    private float yPos;
     public void Start()
     {
         StartCoroutine(SpawnPlatform());
-
     }
 
 

@@ -22,8 +22,8 @@ public class Bats : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<CircleCollider2D>();
-        batAnim = transform.Find("Sprite").gameObject.GetComponent<Animator>();
-        batPullAnim = GetComponent<Animator>();
+        batAnim = transform.Find("Bat pull").gameObject.transform.Find("Sprite").gameObject.GetComponent<Animator>();
+        batPullAnim = transform.Find("Bat pull").gameObject.GetComponent<Animator>();
     }
 
 
@@ -35,11 +35,11 @@ public class Bats : MonoBehaviour
             if (player.name == "PlayerOne")
             {
                 destination = new Vector2(player.transform.position.x - (0.5f * (whichBat)), player.transform.position.y);
-                dir = (destination - (Vector2)transform.position).normalized;
+                dir = destination - (Vector2)transform.position;
                 //0.2 is so that it doesnt have to move to the exact spot
-                if (dir.magnitude > 0.2)
+                if (dir.magnitude > 0.1)
                 {
-                    rb.velocity = dir;
+                    rb.velocity = dir * 8 / Mathf.Sqrt(whichBat);
                 }
                 else
                 {
