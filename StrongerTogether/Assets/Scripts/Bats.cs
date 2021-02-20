@@ -62,6 +62,7 @@ public class Bats : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        gameObject.layer = 3;
         if (collision.gameObject.CompareTag("Player"))
         {
             player = collision.gameObject;
