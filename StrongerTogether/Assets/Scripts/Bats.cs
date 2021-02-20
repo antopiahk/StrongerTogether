@@ -62,9 +62,9 @@ public class Bats : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(rb.velocity.magnitude > 2)
+        if(rb.velocity.magnitude > 2.5f)
         {
-            rb.velocity = rb.velocity.normalized*2;
+            rb.velocity = rb.velocity.normalized*2.5f;
         }
     }
 
