@@ -6,6 +6,9 @@ public class Lava : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        GameManager.instance.GameOver(collider.gameObject);
+        if (collider.name == "PlayerOne" || collider.name == "PlayerTwo")
+        {
+            GameManager.instance.GameOver(collider.gameObject);
+        }
     }
 }
