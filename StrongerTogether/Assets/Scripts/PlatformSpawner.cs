@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlatformSpawner : MonoBehaviour
 {
-    public int spawnTime;
+    public float spawnTime;
+    public float destroyDelayTime;
     public GameObject[] platformPrefabs;
+    private List<GameObject> platformsInScene;
 
     public float leftSpawnPos, rightSpawnPos;
     public float heightGap;
@@ -22,10 +24,18 @@ public class PlatformSpawner : MonoBehaviour
         while (true)
         {
             float randomXPos = Random.Range(leftSpawnPos, rightSpawnPos);
-            Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)], new Vector2(randomXPos, yPos), Quaternion.identity);
-            Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)], new Vector2(-randomXPos, yPos), Quaternion.identity);
+            GameObject platformLeft = Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)], new Vector2(randomXPos, yPos), Quaternion.identity);
+            GameObject platformRight = Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)], new Vector2(-randomXPos, yPos), Quaternion.identity);
+            StartCoroutine(DelayDestroyPlatform(platformLeft));
+            StartCoroutine(DelayDestroyPlatform(platformRight));
             yPos += heightGap;
-            yield return new WaitForSeconds(spawnTime);
+            yield return new WaitForSeconds(spawnTime/GameManager.instance.generalVelocity);
         }
+    }
+
+    IEnumerator DelayDestroyPlatform(GameObject _platform)
+    {
+        yield return new WaitForSeconds(5+destroyDelayTime/GameManager.instance.generalVelocity);
+        Destroy(_platform);
     }
 }

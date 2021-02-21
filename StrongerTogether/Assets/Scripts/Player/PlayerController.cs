@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
             GameObject.Find("PlayerTwo").GetComponent<Rigidbody2D>().AddForce((transform.position - GameObject.Find("PlayerTwo").transform.position).normalized * pullForce, ForceMode2D.Impulse);
         }
         pullCharge += Time.deltaTime;
-        if(pullCharge / pullCoolDown >= 1)
+        if (pullCharge / pullCoolDown >= 1)
         {
             pullIsReady = true;
         }
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = true;
         }
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = false;
         }

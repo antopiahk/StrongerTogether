@@ -26,7 +26,7 @@ public class BatSpawner : MonoBehaviour
             //float randomXPos = Random.Range(leftSpawnPos, rightSpawnPos);
             Instantiate(batPrefab, new Vector2(0, yPos), Quaternion.identity);
             yPos += heightIncrement;
-            yield return new WaitForSeconds(spawnTime);
+            yield return new WaitForSeconds(spawnTime/GameManager.instance.generalVelocity);
         }
     }
 }

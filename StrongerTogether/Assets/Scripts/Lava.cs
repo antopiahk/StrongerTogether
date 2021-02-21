@@ -10,5 +10,9 @@ public class Lava : MonoBehaviour
         {
             GameManager.instance.GameOver(collider.gameObject);
         }
+        if (collider.CompareTag("Platform"))
+        {
+            Destroy(collider.gameObject);
+        }
     }
 }

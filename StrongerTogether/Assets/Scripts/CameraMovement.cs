@@ -11,6 +11,7 @@ public class CameraMovement : MonoBehaviour
     public float speed;
     public GameObject target;
     public Vector3 offset;
+    public float waitTime;
     void Start()
     {
     }
@@ -18,9 +19,9 @@ public class CameraMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (Time.timeSinceLevelLoad > 3) // Check if target (Player) is alive
+        if (Time.timeSinceLevelLoad > waitTime) // Check if target (Player) is alive
         {
-           transform.position = new Vector3(0,transform.position.y+speed/100,-10);
+            transform.position = new Vector3(0, transform.position.y + speed*GameManager.instance.generalVelocity / 100, -10);
         }
     }
 }

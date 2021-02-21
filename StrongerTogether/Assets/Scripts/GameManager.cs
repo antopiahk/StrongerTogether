@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverGUI;
 
     private GameObject winner;
+
+    public float generalVelocity;
     void Awake()
     {
         if(instance == null)

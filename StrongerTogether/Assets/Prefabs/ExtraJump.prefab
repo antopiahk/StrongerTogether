@@ -4876,7 +4876,7 @@ GameObject:
   - component: {fileID: 7985890263972215106}
   m_Layer: 0
   m_Name: ExtraJump
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
