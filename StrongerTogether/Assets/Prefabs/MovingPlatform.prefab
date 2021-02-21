@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1536676704321955163}
   - component: {fileID: 1536676704321955164}
-  - component: {fileID: 1536676704321955165}
   - component: {fileID: -1328130503702264646}
   - component: {fileID: -429316881419539379}
+  - component: {fileID: 7162407021591685629}
   m_Layer: 7
   m_Name: MovingPlatform
   m_TagString: Platform
@@ -85,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &1536676704321955165
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536676704321955166}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.000000023686823, y: 0.1986995}
-  m_Size: {x: 1.1924949, y: 0.26591566}
-  m_Direction: 1
 --- !u!251 &-1328130503702264646
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -135,3 +119,35 @@ MonoBehaviour:
   speed: 0.5
   movingRight: 1
   isLeftPlatform: 0
+--- !u!60 &7162407021591685629
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536676704321955166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.1875, y: 0.6875}
+    newSize: {x: 1.1875, y: 0.6875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.4842519, y: 0.32967162}
+      - {x: -0.6125208, y: 0.18931052}
+      - {x: -0.48381016, y: 0.030183833}
+      - {x: -0.012267843, y: -0.3812921}
+      - {x: 0.57383674, y: 0.10675639}
+      - {x: 0.61408544, y: 0.21597311}
+      - {x: 0.44983822, y: 0.36252117}

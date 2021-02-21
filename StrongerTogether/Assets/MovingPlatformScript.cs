@@ -11,7 +11,6 @@ public class MovingPlatformScript : MonoBehaviour
     {
         if(isLeftPlatform) transform.position = new Vector3(-6.75f, transform.position.y, 0);
         else  transform.position = new Vector3(6.75f, transform.position.y, 0);
-        
     }
 
     void Update()
@@ -58,5 +57,13 @@ public class MovingPlatformScript : MonoBehaviour
         }
 
 
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            other.transform.position = new Vector2(transform.position.x, other.transform.position.y);
+        }
     }
 }
