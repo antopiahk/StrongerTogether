@@ -4960,7 +4960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 13
-  respawnTime: 3
+  respawnTime: 2
   breakEffect: {fileID: 7985890263237687871}
 --- !u!58 &7985890263972215106
 CircleCollider2D:

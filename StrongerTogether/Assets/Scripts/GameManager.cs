@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
         {
             winner = playerOne;
         }
-        Debug.Log(winner.name);
         gameOverGUI.SetActive(true);
         gameOverGUI.transform.Find("GameOverText").GetComponent<TextMeshProUGUI>().text = "Player " + winner.name[6] + winner.name[7] + winner.name[8] + " Wins!";
         StopAllCoroutines();
