@@ -75,30 +75,29 @@ public class TutorialManager : MonoBehaviour
     public void WelcomeText()
     {
         tutorialStage = TutorialStage.WELCOME;
-        tutorialText.text = "Welcome to Our Game!";
+        tutorialText.text = "Hold W / Down-Arrow and release to jump. Left click to continue.";
     }
 
     public void PlayerControlsTextFirst()
     {
         tutorialStage = TutorialStage.ONE;
-        tutorialText.text = "Press W / Down-Arrow to jump";
+        tutorialText.text = "A/D Left-Arrow/Right-Arrow to strafe mid-air";
     }
     public void PlayerControlsTextSecond()
     {
         tutorialStage = TutorialStage.TWO;
-        tutorialText.text = "Moving sideways is only allowed during the air and predetermined the second before your jump.";
+        tutorialText.text = "The goal of the game is to stay away from the lava and survive longer than your friends.";
     }
     public void PlayerControlsTextThird()
     {
         tutorialStage = TutorialStage.THREE;
-        tutorialText.text = "You can move with 'A' and 'D' or '<-' and '->'. Try it out!";
+        tutorialText.text = "Press 'v' or '.' to tug on the rope.You can use this to mess up your opponents jumping direction and make him fall.";
     }
 
     public void PullingRopeText()
     {
         tutorialStage = TutorialStage.FOUR;
-        tutorialText.text = "Press 'v' or '.' to tug on the rope. You can use this to mess up your opponents jumping direction and make him fall." +
-                            " The cooldowns are shown on the bars on the sides! The tugging right now is very weak...";
+        tutorialText.text = "The cooldowns are shown on the bars on the sides! The tugging right now is very weak...";
     }
     public void PlatformsText()
     {
@@ -109,26 +108,26 @@ public class TutorialManager : MonoBehaviour
     public void ExtraJumpsText()
     {
         tutorialStage = TutorialStage.SIX;
-        tutorialText.text = "The red arrows are extra jumps. Hitting them will give you an extra boost as you jump, or save you from falling!";
+        tutorialText.text = "The red arrows are extra jumps. Hitting them will give you an extra boost as you jump!";
     }
 
     public void BatsText()
     {
         tutorialStage = TutorialStage.SEVEN;
         tutorialText.text = "Bats are essential in that they help you out when you tug on the rope by adding more force!" +
-        " A bats are in the shape of aballs when they spawn, and will roll to whoever is lower, giving them a slight advantage with pulling power. More bats = more pulling force";
+        " Bats are in the shape of balls when they spawn, and will roll to whoever is lower, giving them a slight advantage with pulling power. More bats = more pulling force";
     }
 
     public void LavaText()
     {
         tutorialStage = TutorialStage.EIGHT;
-        tutorialText.text = "LAVA. Just don't let it touch you... :/ And yeah, don't fall into the big hole in the middle";
+        tutorialText.text = "Tugging while your friends are in the air is more effective, so keep your eyes on your friends too!";
     }
 
     public void TrialRunText()
     {
         tutorialStage = TutorialStage.NINE;
-        tutorialText.text = "Now that you know the controls, try everything out with a few trial rounds. Just so that you don't get destroyed in the first real round." +
+        tutorialText.text = "Now that you know the controls, try everything out with a few trial round." +
                             " Click To Start! The camera moves up FYI";
     }
     public void Play()
