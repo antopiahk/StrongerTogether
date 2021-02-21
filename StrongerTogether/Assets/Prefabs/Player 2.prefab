@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  timeToFullyChargeJump: 1
+  timeToFullyChargeJump: 0.4
   jumpForce: 15
   chargePercent: 0
   horizontalSpeed: 12

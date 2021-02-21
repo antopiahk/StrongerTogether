@@ -40,18 +40,18 @@ public class MovingPlatformScript : MonoBehaviour
             {
                 if (movingRight)
                 {
-                    transform.position = new Vector3(transform.position.x + speed / 300 * GameManager.instance.generalVelocity, transform.position.y, 0);
+                    transform.position = new Vector3(transform.position.x - speed / 300 * GameManager.instance.generalVelocity, transform.position.y, 0);
                     if (transform.position.x <= 4)
                     {
-                        movingRight = true;
+                        movingRight = false;
                     }
                 }
                 else
                 {
-                    transform.position = new Vector3(transform.position.x - speed / 300 * GameManager.instance.generalVelocity, transform.position.y, 0);
+                    transform.position = new Vector3(transform.position.x + speed / 300 * GameManager.instance.generalVelocity, transform.position.y, 0);
                     if (transform.position.x >= 9.4f)
                     {
-                        movingRight = false;
+                        movingRight = true;
                     }
                 }
             }

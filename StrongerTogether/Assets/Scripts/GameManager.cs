@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
     }
     public void Update()
     {
+        if(Input.GetKeyUp(KeyCode.R))
+        {
+            Reset();
+        }
         playerOneScoreText.text = DataManager.instance.playerOneScore.ToString();
         playerTwoScoreText.text = DataManager.instance.playerTwoScore.ToString();
     }

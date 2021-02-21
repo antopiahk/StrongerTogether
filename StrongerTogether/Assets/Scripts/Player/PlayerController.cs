@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
             pullIsReady = false;
             pullForce += 0.2f * numOfBats;
             GameObject.Find("PlayerTwo").GetComponent<Rigidbody2D>().AddForce((transform.position - GameObject.Find("PlayerTwo").transform.position).normalized * pullForce, ForceMode2D.Impulse);
-            StartCoroutine(GameManager.instance.cameraShake.Shake(.1f, .2f));
+            //StartCoroutine(GameManager.instance.cameraShake.Shake(.1f, .2f));
         }
         pullCharge += Time.deltaTime;
         if (pullCharge / pullCoolDown >= 1)

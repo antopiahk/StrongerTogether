@@ -4959,7 +4959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca49208198a236041b3f6bdad26766b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 15
+  jumpForce: 13
   respawnTime: 3
   breakEffect: {fileID: 7985890263237687871}
 --- !u!58 &7985890263972215106
