@@ -44,7 +44,7 @@ public class Player2Controller : MonoBehaviour
         {
             pullCharge = 0;
             pullIsReady = false;
-            pullForce += 0.2f * numOfBats;
+            pullForce += 0.4f * numOfBats;
             GameObject.Find("PlayerOne").GetComponent<Rigidbody2D>().AddForce((transform.position - GameObject.Find("PlayerOne").transform.position).normalized * pullForce, ForceMode2D.Impulse);
             //StartCoroutine(GameManager.instance.cameraShake.Shake(.1f, .2f));
         }
