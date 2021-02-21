@@ -13,9 +13,11 @@ public class GameManager : MonoBehaviour
     private GameObject winner;
 
     public float generalVelocity;
+
+    public TextMeshProUGUI playerOneScoreText, playerTwoScoreText;
     void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -25,18 +27,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        playerOneScoreText.text = DataManager.instance.playerOneScore.ToString();
+        playerTwoScoreText.text = DataManager.instance.playerTwoScore.ToString();
+    }
+
     public void GameOver(GameObject loser)
     {
-        if(loser = playerOne) winner = playerTwo;
-        else if (loser = playerTwo) winner = playerOne;
+        if (loser = playerOne)
+        {
+            winner = playerTwo;
+            DataManager.instance.playerTwoScore++;
+        }
+        else if (loser = playerTwo)
+        {
+            winner = playerOne;
+            DataManager.instance.playerOneScore++;
+        }
         gameOverGUI.SetActive(true);
-        gameOverGUI.transform.Find("GameOverText").GetComponent<TextMeshProUGUI>().text = "Player " + winner.name[6]+winner.name[7]+winner.name[8] + " Wins!";
+        gameOverGUI.transform.Find("GameOverText").GetComponent<TextMeshProUGUI>().text = "Player " + winner.name[6] + winner.name[7] + winner.name[8] + " Wins!";
         StopAllCoroutines();
     }
 
 
+    public void Reset()
+    {
+        DataManager.instance.playerOneScore = 0;
+        DataManager.instance.playerTwoScore = 0;
+        Restart();
+    }
     public void Restart()
     {
+        Debug.Log("restarting");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
