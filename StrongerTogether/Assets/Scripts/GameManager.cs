@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameObject playerOne, playerTwo;
+    public CameraShake cameraShake;
     public GameObject gameOverGUI;
 
     private GameObject winner;
@@ -26,7 +27,6 @@ public class GameManager : MonoBehaviour
             Destroy(instance);
         }
     }
-
     public void Update()
     {
         playerOneScoreText.text = DataManager.instance.playerOneScore.ToString();
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(GameObject loser)
     {
+        //StartCoroutine(GameManager.instance.cameraShake.Shake(.5f, 0.5f));
         if (loser = playerOne)
         {
             winner = playerTwo;
