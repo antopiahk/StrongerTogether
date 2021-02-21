@@ -24,7 +24,16 @@ public class PlatformSpawner : MonoBehaviour
         while (true)
         {
             float randomXPos = Random.Range(leftSpawnPos, rightSpawnPos);
-            int randomPlatform = Random.Range(0, platformPrefabs.Length);
+            int randomPlatform = Random.Range(0, platformPrefabs.Length*2);
+            Debug.Log(randomPlatform);
+            if(randomPlatform == 0 || randomPlatform == 1 || randomPlatform == 2)
+            {
+                randomPlatform = 0;
+            }
+            else
+            {
+                randomPlatform = 1;
+            }
             GameObject platformLeft = Instantiate(platformPrefabs[randomPlatform], new Vector2(randomXPos, yPos), Quaternion.identity); // Left side
             GameObject platformRight = Instantiate(platformPrefabs[randomPlatform], new Vector2(-randomXPos, yPos), Quaternion.identity); // Right side
             if(randomPlatform == 2)
