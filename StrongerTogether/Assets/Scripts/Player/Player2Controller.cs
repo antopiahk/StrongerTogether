@@ -19,8 +19,11 @@ public class Player2Controller : MonoBehaviour
     float timeElapsed;
     float horizontal;
 
+    public AudioSource sound;
+
     void Start()
     {
+        sound = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -29,6 +32,7 @@ public class Player2Controller : MonoBehaviour
         //Jumping
         if (Input.GetKey(KeyCode.UpArrow) && isGrounded)
         {
+            sound.Play();
             timeElapsed += Time.deltaTime;
             chargePercent = Mathf.Clamp(timeElapsed / timeToFullyChargeJump, 0, 1);
         }

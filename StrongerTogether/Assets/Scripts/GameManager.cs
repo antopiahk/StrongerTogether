@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
     private GameObject winner;
 
     public float generalVelocity;
-
-    public TextMeshProUGUI playerOneScoreText, playerTwoScoreText;
     void Awake()
     {
         if (instance == null)
@@ -29,27 +27,24 @@ public class GameManager : MonoBehaviour
     }
     public void Update()
     {
-        if(Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.R))
         {
             Reset();
         }
-        playerOneScoreText.text = DataManager.instance.playerOneScore.ToString();
-        playerTwoScoreText.text = DataManager.instance.playerTwoScore.ToString();
     }
 
     public void GameOver(GameObject loser)
     {
-        //StartCoroutine(GameManager.instance.cameraShake.Shake(.5f, 0.5f));
-        if (loser = playerOne)
+
+        if (loser == playerOne)
         {
             winner = playerTwo;
-            DataManager.instance.playerTwoScore++;
         }
-        else if (loser = playerTwo)
+        else if (loser == playerTwo)
         {
             winner = playerOne;
-            DataManager.instance.playerOneScore++;
         }
+        Debug.Log(winner.name);
         gameOverGUI.SetActive(true);
         gameOverGUI.transform.Find("GameOverText").GetComponent<TextMeshProUGUI>().text = "Player " + winner.name[6] + winner.name[7] + winner.name[8] + " Wins!";
         StopAllCoroutines();

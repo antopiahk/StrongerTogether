@@ -12,7 +12,7 @@ public class PlatformSpawner : MonoBehaviour
     public float leftSpawnPos, rightSpawnPos;
     public float heightGap;
 
-    private float yPos = -2;
+    private float yPos = -3;
     public void Start()
     {
         StartCoroutine(SpawnPlatform());
@@ -25,7 +25,6 @@ public class PlatformSpawner : MonoBehaviour
         {
             float randomXPos = Random.Range(leftSpawnPos, rightSpawnPos);
             int randomPlatform = Random.Range(0, platformPrefabs.Length*2);
-            Debug.Log(randomPlatform);
             if(randomPlatform == 0 || randomPlatform == 1 || randomPlatform == 2)
             {
                 randomPlatform = 0;

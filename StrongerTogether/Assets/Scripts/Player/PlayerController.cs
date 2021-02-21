@@ -18,9 +18,11 @@ public class PlayerController : MonoBehaviour
     public int numOfBats;
     float timeElapsed;
     float horizontal;
+    public AudioSource sound;
 
     void Start()
     {
+        sound = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         //Jumping
         if (Input.GetKey(KeyCode.W) && isGrounded)
         {
+            sound.Play();
             timeElapsed += Time.deltaTime;
             chargePercent = Mathf.Clamp(timeElapsed / timeToFullyChargeJump, 0, 1);
         }
