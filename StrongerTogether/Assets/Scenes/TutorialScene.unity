@@ -18199,8 +18199,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerOne: {fileID: 997977403}
   playerTwo: {fileID: 780318774}
+  cameraShake: {fileID: 0}
   gameOverGUI: {fileID: 1930504985}
   generalVelocity: 1
+  playerOneScoreText: {fileID: 0}
+  playerTwoScoreText: {fileID: 0}
 --- !u!114 &9157585278372799602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18218,6 +18221,7 @@ MonoBehaviour:
   platformPrefabs:
   - {fileID: 1536676704321955166, guid: 582cde474fed7304c88fa92b5105c2c3, type: 3}
   - {fileID: 7985890263972215105, guid: 5b769ddfa68f65f4bb6187e1813b03cd, type: 3}
+  - {fileID: 1536676704321955166, guid: 081901731432b154a97ce0f7a79f426c, type: 3}
   leftSpawnPos: -9.40625
   rightSpawnPos: -3.90625
   heightGap: 2

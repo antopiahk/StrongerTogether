@@ -24,8 +24,14 @@ public class PlatformSpawner : MonoBehaviour
         while (true)
         {
             float randomXPos = Random.Range(leftSpawnPos, rightSpawnPos);
-            GameObject platformLeft = Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)], new Vector2(randomXPos, yPos), Quaternion.identity);
-            GameObject platformRight = Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)], new Vector2(-randomXPos, yPos), Quaternion.identity);
+            int randomPlatform = Random.Range(0, platformPrefabs.Length);
+            GameObject platformLeft = Instantiate(platformPrefabs[randomPlatform], new Vector2(randomXPos, yPos), Quaternion.identity); // Left side
+            GameObject platformRight = Instantiate(platformPrefabs[randomPlatform], new Vector2(-randomXPos, yPos), Quaternion.identity); // Right side
+            if(randomPlatform == 2)
+            {
+                platformLeft.GetComponent<MovingPlatformScript>().isLeftPlatform = true;
+                platformRight.GetComponent<MovingPlatformScript>().isLeftPlatform = false;
+            }
             StartCoroutine(DelayDestroyPlatform(platformLeft));
             StartCoroutine(DelayDestroyPlatform(platformRight));
             yPos += heightGap;
