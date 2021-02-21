@@ -2327,15 +2327,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2887874703218050081, guid: 3d0e25c84f9a8c5408c354251b841f65, type: 3}
       propertyPath: jumpForce
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2887874703218050081, guid: 3d0e25c84f9a8c5408c354251b841f65, type: 3}
       propertyPath: horizontalSpeed
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2887874703218050081, guid: 3d0e25c84f9a8c5408c354251b841f65, type: 3}
       propertyPath: maxHorizontalSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2887874703218050081, guid: 3d0e25c84f9a8c5408c354251b841f65, type: 3}
       propertyPath: timeToFullyChargeJump
@@ -7922,10 +7922,10 @@ RectTransform:
   m_Father: {fileID: 1930504986}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -230}
-  m_SizeDelta: {x: 299.9341, y: 48.4335}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 28.666779}
+  m_SizeDelta: {x: 299.9341, y: 48.433502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956637779
 MonoBehaviour:
