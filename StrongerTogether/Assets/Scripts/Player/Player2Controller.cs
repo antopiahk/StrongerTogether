@@ -71,14 +71,23 @@ public class Player2Controller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.name == "MovingPlatform(Clone)")
+        {
+            transform.SetParent(collision.transform);
+        }
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
         {
+
             isGrounded = true;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        if (collision.gameObject.name == "MovingPlatform(Clone)")
+        {
+            transform.SetParent(null);
+        }
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = false;

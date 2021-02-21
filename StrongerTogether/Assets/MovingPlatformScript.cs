@@ -61,9 +61,6 @@ public class MovingPlatformScript : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
-        {
-            other.transform.position = new Vector2(transform.position.x, other.transform.position.y);
-        }
+        //transform.SetParent(other.transform);
     }
 }
