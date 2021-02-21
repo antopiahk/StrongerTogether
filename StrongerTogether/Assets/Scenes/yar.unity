@@ -349,26 +349,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &29054147 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157585278676583104, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-  m_PrefabInstance: {fileID: 303867571}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &29054150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29054147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c8c9c5ece72344783d89a0a27ab3e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  batPrefab: {fileID: 2678883119480304, guid: b4030d27c79e8164eb0eec48dd99a4a2, type: 3}
-  heightIncrement: 10
-  spawnTime: 10
 --- !u!1 &119958624
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,42 +447,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 9157585278676583105, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-      propertyPath: heightGap
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157585278676583105, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157585278676583105, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-      propertyPath: spawnTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157585278676583105, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-      propertyPath: leftSpawnPos
-      value: -9.40625
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157585278676583105, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-      propertyPath: rightSpawnPos
-      value: -3.90625
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157585278676583105, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-      propertyPath: destroyDelayTime
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157585278676583105, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-      propertyPath: platformPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157585278676583105, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-      propertyPath: platformPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1536676704321955166, guid: 582cde474fed7304c88fa92b5105c2c3, type: 3}
-    - target: {fileID: 9157585278676583105, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-      propertyPath: platformPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 7985890263972215105, guid: 5b769ddfa68f65f4bb6187e1813b03cd, type: 3}
     - target: {fileID: 9157585278676583106, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
       propertyPath: playerOne
       value: 
@@ -515,10 +459,6 @@ PrefabInstance:
       propertyPath: gameOverGUI
       value: 
       objectReference: {fileID: 1930504985}
-    - target: {fileID: 9157585278676583106, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
-      propertyPath: generalVelocity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9157585278676583107, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1125,7 +1065,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9157585278676583106, guid: 7c45ce69ca348e6439e68386d8c00484, type: 3}
   m_PrefabInstance: {fileID: 303867571}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29054147}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 899509e1363d45b4c9214c6689466871, type: 3}

@@ -363,7 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   batPrefab: {fileID: 2678883119480304, guid: b4030d27c79e8164eb0eec48dd99a4a2, type: 3}
   heightIncrement: 2
-  spawnTime: 0
+  spawnTime: 3
 --- !u!1 &119958624
 GameObject:
   m_ObjectHideFlags: 0
@@ -6178,12 +6178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2e16893cbb6cf48987428556acf7f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interpVelocity: 1
-  followDistance: 1
   speed: 1
-  target: {fileID: 997977403}
-  offset: {x: 0, y: 0, z: 0}
-  waitTime: 0
+  waitTime: 98999
 --- !u!1 &649156878
 GameObject:
   m_ObjectHideFlags: 0
@@ -18204,7 +18200,7 @@ MonoBehaviour:
   playerOne: {fileID: 997977403}
   playerTwo: {fileID: 780318774}
   gameOverGUI: {fileID: 1930504985}
-  generalVelocity: 0
+  generalVelocity: 1
 --- !u!114 &9157585278372799602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18218,7 +18214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 3
-  destroyDelayTime: 0
+  destroyDelayTime: 500
   platformPrefabs:
   - {fileID: 1536676704321955166, guid: 582cde474fed7304c88fa92b5105c2c3, type: 3}
   - {fileID: 7985890263972215105, guid: 5b769ddfa68f65f4bb6187e1813b03cd, type: 3}

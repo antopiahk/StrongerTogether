@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9157585278676583107}
   - component: {fileID: 9157585278676583106}
   - component: {fileID: 9157585278676583105}
+  - component: {fileID: 6359973305714191758}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,6 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899509e1363d45b4c9214c6689466871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerOne: {fileID: 0}
+  playerTwo: {fileID: 0}
+  gameOverGUI: {fileID: 0}
+  generalVelocity: 1
 --- !u!114 &9157585278676583105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,8 +62,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 3
+  destroyDelayTime: 35
   platformPrefabs:
   - {fileID: 1536676704321955166, guid: 582cde474fed7304c88fa92b5105c2c3, type: 3}
-  leftSpawnPos: -10
-  rightSpawnPos: -3
-  heightGap: 2
+  - {fileID: 7985890263972215105, guid: 5b769ddfa68f65f4bb6187e1813b03cd, type: 3}
+  leftSpawnPos: -9.40625
+  rightSpawnPos: -3.90625
+  heightGap: 2.5
+--- !u!114 &6359973305714191758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157585278676583104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c8c9c5ece72344783d89a0a27ab3e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batPrefab: {fileID: 2678883119480304, guid: b4030d27c79e8164eb0eec48dd99a4a2, type: 3}
+  heightIncrement: 10
+  spawnTime: 10

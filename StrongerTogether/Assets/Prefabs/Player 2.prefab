@@ -118,7 +118,7 @@ MonoBehaviour:
   jumpForce: 15
   chargePercent: 0
   horizontalSpeed: 12
-  maxHorizontalSpeed: 3
+  maxHorizontalSpeed: 4
   isGrounded: 0
   pullIsReady: 0
   pullCharge: 0

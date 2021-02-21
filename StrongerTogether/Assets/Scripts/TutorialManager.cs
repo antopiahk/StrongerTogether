@@ -63,8 +63,8 @@ public class TutorialManager : MonoBehaviour
                     TrialRunText();
                     break;
                 case TutorialStage.NINE:
-                    tutorialText.text = "";
-                    SceneManager.LoadScene(1);
+                    tutorialText.text = "Ready...";
+                    Invoke("Play", 3);
                     break;
 
             }
@@ -129,7 +129,19 @@ public class TutorialManager : MonoBehaviour
     {
         tutorialStage = TutorialStage.NINE;
         tutorialText.text = "Now that you know the controls, try everything out with a few trial rounds. Just so that you don't get destroyed in the first real round." +
-                            " When your ready, press 'N' to start the round! The camera moves up FYI";
+                            " Click To Start! The camera moves up FYI";
+    }
+    public void Play()
+    {
+        tutorialText.text = "Go!";
+        GameObject.Find("Main Camera").GetComponent<CameraMovement>().enabled = true;
+        GameObject.Find("Main Camera").GetComponent<CameraMovement>().waitTime = 0;
+        Invoke("ClearText",1);
+    }
+
+    public void ClearText()
+    {
+         tutorialText.text = "";
     }
 
 }
